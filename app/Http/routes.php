@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['namespace' => 'Api'], function() {
+    Route::get('/crawl_images', 'ImagesController@getImages');
 });
-
-Route::get('/crawl_images', 'ImagesController@get_images');

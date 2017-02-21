@@ -11,13 +11,13 @@ class Image extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public static function data_images() {
-        $images = json_encode(DB::table('images')->get());
-        dd($images);
-        foreach($images as $image) {
-            $image->merge({'category' => $image->category->name});
-        }
+    // public function data_images() {
+    //     $images = DB::table('images')->get();
+    //     dd($images);
+    //     foreach($images as $image) {
+    //         $image->merge({'category' => $image->category->name});
+    //     }
 
-        return $images;
-    }
+    //     return $images;
+    // }
 }
